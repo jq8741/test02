@@ -1,0 +1,16 @@
+spring:
+  port: 8080
+  datasource:
+    driver-class-name: com.mysql.cj.jdbc.Driver
+    url: jdbc:mysql://127.0.0.1/user?useUnicode=true&characterEncoding=utf-8&useSSL=false&serverTimezone = GMT
+    username: root
+    password: 1234
+
+  mybatis-plus:
+    configuration:
+      log-impl: org.apache.ibatis.logging.stdout.StdOutImpl
+      mapperLocations: classpath:mybatis/mapper/*.xml
+      type-aliases-package=classpath: com.jh.springbootmybatisplus.entity
+
+swagger:
+  enabled: true

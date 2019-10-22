@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.jh.springbootmybatisplus.dao.UserDao" >
+
+    <!--用户登录验证-->
+    <select id="userlogin" parameterType="com.jh.springbootmybatisplus.entity.login.UserLogin" resultType="com.jh.springbootmybatisplus.entity.User">
+        SELECT id,
+        user_name,
+        password,
+        age
+        FROM user
+        WHERE user_name = '${userName}' AND password = '${password}'
+    </select>
+
+    <select id="getUserPassWord" parameterType="string" resultType="string">
+        select password from `user` where user_name = '${userName}'
+    </select>
+</mapper>
